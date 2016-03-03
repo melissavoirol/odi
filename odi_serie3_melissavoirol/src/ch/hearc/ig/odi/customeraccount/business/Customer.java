@@ -27,8 +27,7 @@ public class Customer {
 	 * @param number
 	 */
 	public Account getAccountByNumber(String number) {
-            return this.accounts.get(number);
-		
+            return this.accounts.get(number);	
 	}
 
 	/**
@@ -40,7 +39,6 @@ public class Customer {
 	public void addAccount(String number, String name, double rate) {
 	    Account account = new Account(number, name, rate,this);
             accounts.put(number, account);
-            
 	}
 
 }

@@ -20,7 +20,6 @@ public class Account {
         this.name = name;
         this.rate = rate;
         this.customer = customer;
-        
     }
 
     /**
