@@ -22,6 +22,10 @@ public class Account {
         this.customer = customer;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
     /**
      *
      * @param amount
@@ -48,9 +52,26 @@ public class Account {
      * @param source
      * @param target
      */
-    public void transfer(double amount, Account source, Account target) {
+    public static void transfer(double amount, Account source, Account target) {
         source.debit(amount);
         target.credit(amount);
+    }
+    
+    
+    //Méthode toString()
+    public String accToString() {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("\n");
+        sb.append("Account N°");
+        sb.append(this.number);
+        sb.append("     ");
+        sb.append("Name : ");
+        sb.append(this.name);
+        sb.append("    Solde: ");
+        sb.append(this.balance);
+
+        return sb.toString();
     }
 
 }

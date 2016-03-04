@@ -36,9 +36,32 @@ public class Customer {
 	 * @param name
 	 * @param rate
 	 */
-	public void addAccount(String number, String name, double rate) {
-	    Account account = new Account(number, name, rate,this);
-            accounts.put(number, account);
+	public void addAccount(Account account) {
+            accounts.put(account.getNumber(), account);
 	}
+        
+        
+        //Méthode toString()
+        public String custToString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Customer N°");
+        sb.append(this.number);
+        sb.append("\n");
+        sb.append("Name : ");
+        sb.append(this.lastName);
+        sb.append(" ");
+        sb.append(this.firstName);
+        sb.append("\n");
+        sb.append("Accounts : ");
+        for (Account acc : this.accounts.values()){
+            sb.append(acc.accToString());
+            Bank.nbAcc = Bank.nbAcc+1;
+        }        
+        sb.append("\n");
+        
+
+        return sb.toString();
+    }
 
 }
