@@ -33,9 +33,10 @@ public class Bank {
         return this.customers.get(number);
     }
     
-    public void addCustomer(int number, String fn, String ln){
-        Customer cust = new Customer(number, fn, ln);
-        customers.put(number, cust);
+    public Company addCompany(Integer number, String companyName, String phone, String fax){
+        Company comp = new Company(number, companyName, phone, fax);
+        customers.put(number, comp);
+        return comp;
     }
     
     public void addAccount(String number, String name, double rate, Customer cust){
