@@ -8,13 +8,33 @@ import java.util.Date;
  */
 public class Individual extends Customer {
 
+    private String firstName;
+    private String lastName;
     private Date birthDate;
     private String email;
 
     public Individual(Integer number, String firstName, String lastName, Date birthDate, String email) {
-        super(number, firstName, lastName);
+        super(number);
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.birthDate = birthDate;
         this.email = email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Date getBirthDate() {
@@ -35,7 +55,7 @@ public class Individual extends Customer {
 
     @Override
     public String toString() {
-        return "Individual{" + "birthDate=" + birthDate + ", email=" + email + '}';
+        return "Individual{" + "firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate + ", email=" + email + '}';
     }
 
 }
