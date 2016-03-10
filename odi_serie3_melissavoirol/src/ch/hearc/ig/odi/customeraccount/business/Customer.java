@@ -6,19 +6,13 @@ public class Customer {
 
 	private Map<String, Account> accounts;  //--converti en Map, VP=> Collection<Account> accounts;
 	private int number;
-	private String firstName;
-	private String lastName;
 
 	/**
 	 * 
 	 * @param number
-	 * @param firstName
-	 * @param lastName
 	 */
-	public Customer(Integer number, String firstName, String lastName) {
+	public Customer(Integer number) {
             this.number = number;
-            this.firstName = firstName;
-            this.lastName = lastName;
             this.accounts = new HashMap();
 	}
 
@@ -47,11 +41,6 @@ public class Customer {
 
         sb.append("Customer N°");
         sb.append(this.number);
-        sb.append("\n");
-        sb.append("Name : ");
-        sb.append(this.lastName);
-        sb.append(" ");
-        sb.append(this.firstName);
         sb.append("\n");
         sb.append("Accounts : ");
         for (Account acc : this.accounts.values()){
