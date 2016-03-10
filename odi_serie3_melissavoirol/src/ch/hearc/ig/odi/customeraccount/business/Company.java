@@ -5,13 +5,23 @@ package ch.hearc.ig.odi.customeraccount.business;
  * @author steven.habegger
  */
 public class Company extends Customer {
+    private String companyName;
     private String phone;
     private String fax;
 
-    public Company(Integer number, String firstName, String lastName, String phone, String fax) {
-        super(number, firstName, lastName);
+    public Company(Integer number, String companyName, String phone, String fax) {
+        super(number);
+        this.companyName = companyName;
         this.phone = phone;
         this.fax = fax;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getPhone() {
@@ -32,10 +42,7 @@ public class Company extends Customer {
 
     @Override
     public String toString() {
-        return "Company{" + "phone=" + phone + ", fax=" + fax + '}';
+        return "Company{" + "companyName=" + companyName + ", phone=" + phone + ", fax=" + fax + '}';
     }
-    
-    
-    
-    
+ 
 }
