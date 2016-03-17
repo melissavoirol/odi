@@ -5,6 +5,7 @@
  */
 package ch.hearc.ig.odi.customeraccount.business;
 
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -33,9 +34,10 @@ public class Bank {
         return this.customers.get(number);
     }
     
-    public void addCustomer(int number, String fn, String ln){
-        Customer cust = new Customer(number, fn, ln);
-        customers.put(number, cust);
+    public Individual addIndividual(Integer number, String fn, String ln, Date birthDate, String email) {
+        Individual ind = new Individual(number, fn, ln, birthDate, email);
+        customers.put(number, ind);
+        return ind;
     }
     
     public void addAccount(String number, String name, double rate, Customer cust){
